@@ -1,0 +1,8 @@
+{% block quill_widget %}
+    {% apply spaceless %}
+        <div {{ stimulus_controller('quill') }} data-id="{{ id }}">
+            {{ value|raw }}
+        </div>
+        <input type="hidden" {{ block('widget_attributes') }} value="{{ value }}" />
+    {% endapply %}
+{% endblock %}
