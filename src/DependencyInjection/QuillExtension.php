@@ -11,16 +11,17 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Reference;
 
 class QuillExtension extends Extension implements PrependExtensionInterface
 {
     public function prepend(ContainerBuilder $container)
     {
-        // Register the Dropzone form theme if TwigBundle is available
+        // Register the Quill form theme if TwigBundle is available
         $bundles = $container->getParameter('kernel.bundles');
 
         if (isset($bundles['TwigBundle'])) {
-            $container->prependExtensionConfig('twig', ['form_themes' => ['@Quill/form_theme.html.twig']]);
+            $container->prependExtensionConfig('twig', ['form_themes' => ['@Quill/theme.html.twig']]);
         }
 
         if ($this->isAssetMapperAvailable($container)) {
@@ -36,10 +37,18 @@ class QuillExtension extends Extension implements PrependExtensionInterface
 
     public function load(array $configs, ContainerBuilder $container)
     {
+        $configuration = $this->getConfiguration($configs, $container);
+        $config = $this->processConfiguration($configuration, $configs);
+
         $container
             ->setDefinition('form.quill', new Definition(QuillType::class))
+            ->setArguments([
+                new Reference('service_container'),
+            ])
+            ->setAutowired(true)
             ->addTag('form.type')
-            ->setPublic(false)
+            ->setPublic(true)
+            ->setAutoconfigured(true)
         ;
     }
 

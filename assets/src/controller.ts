@@ -1,4 +1,4 @@
-'use strinct';
+'use strict';
 
 import { Controller } from '@hotwired/stimulus';
 import Quill from 'quill';
