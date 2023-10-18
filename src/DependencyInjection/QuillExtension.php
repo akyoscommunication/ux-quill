@@ -1,11 +1,12 @@
 <?php
 
-namespace Akyos\Quill\DependencyInjection;
+namespace Symfony\UX\Quill\DependencyInjection;
 
 use Akyos\Quill\Form\QuillType;
 use Exception;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
@@ -26,7 +27,7 @@ class QuillExtension extends Extension implements PrependExtensionInterface
             $container->prependExtensionConfig('framework', [
                 'asset_mapper' => [
                     'paths' => [
-                        __DIR__.'/../../assets/dist' => '@symfony/ux-dropzone',
+                        __DIR__.'/../../assets/dist' => '@symfony/ux-quill',
                     ],
                 ],
             ]);

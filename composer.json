@@ -19,23 +19,18 @@
     ],
     "keywords": ["form", "quill"],
     "require": {
-	"php": ">=8.1",
-	"symfony/http-foundation": "5.*|6.*",
-	"symfony/http-client": "5.*|6.*",
-	"symfony/dependency-injection": "5.*|6.*",
-	"symfony/config": "5.*|6.*",
-	"symfony/http-kernel": "5.*|6.*",
-	"symfony/filesystem": "5.*|6.*",
-	"symfony/framework-bundle": "5.*|6.*",
-	"symfony/security-core": "*"
+		"php": ">=8.1",
+		"symfony/config": "5.*|6.*",
+		"symfony/dependency-injection": "5.*|6.*",
+		"symfony/http-kernel": "5.*|6.*"
     },
     "autoload": {
         "psr-4": {
-			"Akyos\\Quill\\": "src/"
+			"Symfony\\UX\\Quill\\": "src/"
 		},
         "exclude-from-classmap": [
             "/Tests/"
         ]
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
