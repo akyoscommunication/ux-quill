@@ -1,0 +1,11 @@
+services:
+    Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Akyos\Quill\:
+        resource: './../../*'
+        tags: [ 'controller.service_arguments' ]
+        public: true
