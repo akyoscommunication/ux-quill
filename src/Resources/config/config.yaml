@@ -1,0 +1,5 @@
+services:
+    quill.configuration:
+        class: Symfony\UX\Quill\Config\QuillConfiguration
+        arguments:
+            - { type: 'collection' }

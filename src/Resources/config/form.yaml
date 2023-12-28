@@ -1,0 +1,7 @@
+services:
+    quill.form:
+        class: Symfony\UX\Quill\Form\QuillType
+        arguments:
+            - '@quill.configuration'
+        tags:
+            - { name: form.type }

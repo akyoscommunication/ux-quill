@@ -2,7 +2,6 @@
 
 namespace Symfony\UX\Quill;
 
-use Akyos\Quill\DependencyInjection\QuillExtension;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

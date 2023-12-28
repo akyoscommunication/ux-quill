@@ -2,7 +2,8 @@
 
 namespace Symfony\UX\Quill\DependencyInjection;
 
-use Akyos\Quill\Form\QuillType;
+use Symfony\UX\Quill\Config\Form\QuillType;
+use Symfony\UX\Quill\Config\QuillConfiguration;
 use Exception;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
@@ -12,8 +13,9 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-class QuillExtension extends Extension implements PrependExtensionInterface
+class QuillExtension extends ConfigurableExtension implements PrependExtensionInterface
 {
     public function prepend(ContainerBuilder $container)
     {
@@ -35,20 +37,33 @@ class QuillExtension extends Extension implements PrependExtensionInterface
         }
     }
 
-    public function load(array $configs, ContainerBuilder $container): void
+    protected function loadInternal(array $configs, ContainerBuilder $container): void
     {
-        $configuration = $this->getConfiguration($configs, $container);
-        $config = $this->processConfiguration($configuration, $configs);
+        $this->loadResources($container);
+
+        $container->getDefinition('quill.configuration')
+            ->setArgument(0, $configs)
+        ;
 
         $container
             ->setDefinition('form.quill', new Definition(QuillType::class))
-            ->setArguments([
-                $config['default_config'],
-                $config['configs'],
-            ])
+            ->setArgument(0, new Reference('quill.configuration'))
             ->addTag('form.type')
-            ->setPublic(false)
         ;
+    }
+
+    private function loadResources(ContainerBuilder $container): void
+    {
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+
+        $resources = [
+            'config',
+            'form',
+        ];
+
+        foreach ($resources as $resource) {
+            $loader->load($resource.'.yaml');
+        }
     }
 
     private function isAssetMapperAvailable(ContainerBuilder $container): bool
