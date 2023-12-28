@@ -2,7 +2,6 @@
 
 namespace Symfony\UX\Quill\Form;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormInterface;
@@ -12,16 +11,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class QuillType extends AbstractType
 {
     public function __construct(
-        private ContainerInterface $container
+        private string $defaultConfig,
+        private array $configs,
     ){
     }
 
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $controller = 'quill';
-//        $preset = $options['preset'];
+        $preset = $options['preset'];
 
-        dump($this->container);
+        if (isset($this->configs[$preset])) {
+            $options['options'] = array_merge($this->configs[$preset], $options['options']);
+        }
 
         $view->vars['row_attr'] = [
             'data-controller' => $controller,
@@ -47,8 +49,7 @@ class QuillType extends AbstractType
                 'placeholder' => 'Compose an epic...',
                 'theme' => 'snow'
             ],
-            'preset' => 'default',
-
+            'preset' => $this->defaultConfig,
         ]);
     }
 

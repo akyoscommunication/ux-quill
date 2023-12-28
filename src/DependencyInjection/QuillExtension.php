@@ -35,7 +35,7 @@ class QuillExtension extends Extension implements PrependExtensionInterface
         }
     }
 
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
@@ -43,12 +43,11 @@ class QuillExtension extends Extension implements PrependExtensionInterface
         $container
             ->setDefinition('form.quill', new Definition(QuillType::class))
             ->setArguments([
-                new Reference('service_container'),
+                $config['default_config'],
+                $config['configs'],
             ])
-            ->setAutowired(true)
             ->addTag('form.type')
-            ->setPublic(true)
-            ->setAutoconfigured(true)
+            ->setPublic(false)
         ;
     }
 
