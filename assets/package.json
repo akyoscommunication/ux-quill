@@ -14,7 +14,12 @@
         "name": "ux-quill",
         "webpackMode": "eager",
         "fetch": "eager",
-        "enabled": true
+        "enabled": true,
+        "autoimport": {
+          "quill": true,
+          "quill/dist/quill.snow.css": true,
+          "quill/dist/quill.bubble.css": true
+        }
       }
     },
     "importmap": {

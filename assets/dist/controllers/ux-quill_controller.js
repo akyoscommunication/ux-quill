@@ -7,7 +7,6 @@ import 'quill/dist/quill.bubble.css';
 let isQuillInitialized = false;
 
 export default class extends Controller {
-	private quill: Quill | null = null;
 	static targets = ['editor', 'output'];
 	static values = { options: Object };
 
@@ -39,7 +38,7 @@ export default class extends Controller {
 		this.dispatchEvent('connect', { quill: this.quill });
 	}
 
-	private dispatchEvent(name, payload) {
+	dispatchEvent(name, payload) {
 		this.dispatch(name, { detail: payload, prefix: 'ux-quill' });
 	}
 }
