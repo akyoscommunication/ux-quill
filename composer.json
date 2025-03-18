@@ -28,19 +28,16 @@
 			"homepage": "https://symfony.com/contributors"
 		}
 	],
+	"autoload": {
+		"psr-4": {
+			"Akyos\\UXQuill\\": "src/"
+		}
+	},
 	"require": {
 		"php": ">=8.1",
 		"symfony/config": "5.*|6.*|7.*",
 		"symfony/dependency-injection": "5.*|6.*|7.*",
 		"symfony/http-kernel": "5.*|6.*|7.*"
-	},
-	"autoload": {
-		"psr-4": {
-			"Akyos\\UXQuill\\": "src/"
-		},
-		"exclude-from-classmap": [
-			"/Tests/"
-		]
 	},
 	"extra": {
 		"thanks": {

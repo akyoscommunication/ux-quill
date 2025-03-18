@@ -2,7 +2,7 @@
 
 namespace Akyos\UXQuill\DependencyInjection;
 
-use Akyos\UXQuill\Form\QuillType;
+use Akyos\UXQuill\Form\UXQuillType;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Definition;
@@ -44,7 +44,7 @@ class UXQuillExtension extends ConfigurableExtension implements PrependExtension
         ;
 
         $container
-            ->setDefinition('form.quill', new Definition(QuillType::class))
+            ->setDefinition('form.quill', new Definition(UXQuillType::class))
             ->setArgument(0, new Reference('quill.configuration'))
             ->addTag('form.type')
         ;

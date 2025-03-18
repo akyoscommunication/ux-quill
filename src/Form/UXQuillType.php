@@ -10,7 +10,7 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Akyos\UXQuill\Config\QuillConfigurationInterface;
 
-class QuillType extends AbstractType
+class UXQuillType extends AbstractType
 {
     public function __construct(
         private QuillConfigurationInterface $configuration,
