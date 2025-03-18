@@ -1,10 +1,8 @@
 <?php
 
-namespace Symfony\UX\Quill\DependencyInjection;
+namespace Akyos\UXQuill\DependencyInjection;
 
-use Symfony\UX\Quill\Config\Form\QuillType;
-use Symfony\UX\Quill\Config\QuillConfiguration;
-use Exception;
+use Akyos\UXQuill\Form\QuillType;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Definition;
@@ -23,14 +21,14 @@ class QuillExtension extends ConfigurableExtension implements PrependExtensionIn
         $bundles = $container->getParameter('kernel.bundles');
 
         if (isset($bundles['TwigBundle'])) {
-            $container->prependExtensionConfig('twig', ['form_themes' => ['@Quill/theme.html.twig']]);
+            $container->prependExtensionConfig('twig', ['form_themes' => ['@UXQuill/theme.html.twig']]);
         }
 
         if ($this->isAssetMapperAvailable($container)) {
             $container->prependExtensionConfig('framework', [
                 'asset_mapper' => [
                     'paths' => [
-                        __DIR__.'/../../assets/dist' => '@symfony/ux-quill',
+                        __DIR__.'/../../assets/dist' => '@akyoscommunication/ux-quill',
                     ],
                 ],
             ]);
@@ -54,7 +52,7 @@ class QuillExtension extends ConfigurableExtension implements PrependExtensionIn
 
     private function loadResources(ContainerBuilder $container): void
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
 
         $resources = [
             'config',

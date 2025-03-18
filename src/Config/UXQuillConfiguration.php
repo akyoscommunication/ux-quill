@@ -1,8 +1,8 @@
 <?php
 
-namespace Symfony\UX\Quill\Config;
+namespace Akyos\UXQuill\Config;
 
-class QuillConfiguration implements QuillConfigurationInterface
+class UXQuillConfiguration implements QuillConfigurationInterface
 {
     private $defaultConfig;
     private $configs = [];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\UX\Quill\Config;
+namespace Akyos\UXQuill\Config;
 
 interface QuillConfigurationInterface
 {

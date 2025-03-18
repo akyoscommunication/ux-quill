@@ -1,6 +1,6 @@
-{% block quill_widget %}
+{% block ux-quill_widget %}
     {% apply spaceless %}
-        <div {{ stimulus_target('quill', 'editor') }}></div>
-        <input {{ stimulus_target('quill', 'output') }} type="hidden" {{ block('widget_attributes') }} value="{{ value }}" />
+        <div {{ stimulus_target('ux-quill', 'editor') }}></div>
+        <input {{ stimulus_target('ux-quill', 'output') }} type="hidden" {{ block('widget_attributes') }} value="{{ value }}" />
     {% endapply %}
 {% endblock %}

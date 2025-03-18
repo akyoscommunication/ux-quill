@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\UX\Quill\DependencyInjection;
+namespace Akyos\UXQuill\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('quill');
+        $treeBuilder = new TreeBuilder('ux_quill');
 
         $treeBuilder
             ->getRootNode()

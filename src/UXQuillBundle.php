@@ -1,11 +1,11 @@
 <?php
 
-namespace Symfony\UX\Quill;
+namespace Akyos\UXQuill;
 
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class QuillBundle extends Bundle
+final class UXQuillBundle extends Bundle
 {
     public function getPath(): string
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\UX\Quill\Form;
+namespace Akyos\UXQuill\Form;
 
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Form\AbstractType;
@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\UX\Quill\Config\QuillConfigurationInterface;
+use Akyos\UXQuill\Config\QuillConfigurationInterface;
 
 class QuillType extends AbstractType
 {
@@ -59,6 +59,6 @@ class QuillType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'quill';
+        return 'ux-quill';
     }
 }

@@ -1,22 +1,23 @@
 {
-  "name": "@symfony/ux-quill",
+  "name": "@akyoscommunication/ux-quill",
   "description": "File input rich editor text for Symfony Forms",
   "license": "MIT",
   "version": "1.1.0",
   "main": "dist/controller.js",
   "types": "dist/controller.d.ts",
   "config": {
-    "css_source": "src/style.css"
+    "css_source": "src/app.css"
   },
   "symfony": {
     "controllers": {
-      "quill": {
-        "main": "dist/controller.js",
+      "ux-quill": {
+        "main": "dist/controllers/ux-quill_controller.js",
+        "name": "ux-quill",
         "webpackMode": "eager",
         "fetch": "eager",
         "enabled": true,
         "autoimport": {
-          "@symfony/ux-quill/dist/style.min.css": true
+          "@akyoscommunication/ux-quill/dist/app.css": true
         }
       }
     },
@@ -31,6 +32,6 @@
     "@hotwired/stimulus": "^3.0.0"
   },
   "dependencies": {
-    "quill": "^1.3.7"
+    "quill": "^2.0.3"
   }
 }

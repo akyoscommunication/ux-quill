@@ -1,36 +1,46 @@
 {
-    "name": "akyos/quill",
-    "type": "formType",
-    "description": "Symfony Quill Akyos",
-    "license": "MIT",
-    "authors": [
-	{
-		"name": "Lilian Carneau",
-		"email": "lilian@akyos.com"
-	},
-	{
-		"name": "Thomas Sebert",
-		"email": "thomas@akyos.com"
-	},
-	{
-		"name": "Akyos Communication",
-		"homepage": "https://akyos.com"
-	}
-    ],
-    "keywords": ["form", "quill"],
-    "require": {
+	"name": "akyoscommunication/ux-quill",
+	"type": "library",
+	"description": "UX Quill for Symfony",
+	"license": "MIT",
+	"keywords": [
+		"symfony-ux",
+		"PHP",
+		"live component",
+		"form",
+		"quill"
+	],
+	"authors": [
+		{
+			"name": "Lilian Carneau",
+			"email": "lilian@akyos.com"
+		},
+		{
+			"name": "Thomas Sebert",
+			"email": "thomas@akyos.com"
+		},
+		{
+			"name": "Akyos Communication",
+			"homepage": "https://akyos.com"
+		},
+		{
+			"name": "Symfony Community",
+			"homepage": "https://symfony.com/contributors"
+		}
+	],
+	"require": {
 		"php": ">=8.1",
 		"symfony/config": "5.*|6.*|7.*",
 		"symfony/dependency-injection": "5.*|6.*|7.*",
 		"symfony/http-kernel": "5.*|6.*|7.*"
-    },
-    "autoload": {
-        "psr-4": {
-			"Symfony\\UX\\Quill\\": "src/"
+	},
+	"autoload": {
+		"psr-4": {
+			"Akyos\\UXQuill\\": "src/"
 		},
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
-    },
-    "minimum-stability": "dev"
+		"exclude-from-classmap": [
+			"/Tests/"
+		]
+	},
+	"minimum-stability": "dev"
 }

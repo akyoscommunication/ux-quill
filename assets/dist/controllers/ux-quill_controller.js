@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Controller } from '@hotwired/stimulus';
 import Quill from 'quill';
 
@@ -40,7 +39,7 @@ export default class extends Controller {
 		this.dispatchEvent('connect', { quill: this.quill });
 	}
 
-	private dispatchEvent(name: string, payload: any) {
-		this.dispatch(name, { detail: payload, prefix: 'quill' });
+	private dispatchEvent(name, payload) {
+		this.dispatch(name, { detail: payload, prefix: 'ux-quill' });
 	}
 }
