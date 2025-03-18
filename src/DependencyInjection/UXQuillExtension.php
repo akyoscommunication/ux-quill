@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-class QuillExtension extends ConfigurableExtension implements PrependExtensionInterface
+class UXQuillExtension extends ConfigurableExtension implements PrependExtensionInterface
 {
     public function prepend(ContainerBuilder $container)
     {
