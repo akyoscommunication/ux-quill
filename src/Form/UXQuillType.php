@@ -19,7 +19,7 @@ class UXQuillType extends AbstractType
 
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $controller = 'quill';
+        $controller = 'ux-quill';
         $preset = $options['preset'];
         $options['options'] = array_merge($this->configuration->getConfig($preset), $options['options']);
 
