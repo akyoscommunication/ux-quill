@@ -1,5 +1,5 @@
 services:
     quill.configuration:
-        class: Symfony\UX\Quill\Config\QuillConfiguration
+        class: Akyos\UXQuill\Config\UXQuillConfiguration
         arguments:
             - { type: 'collection' }
