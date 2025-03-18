@@ -59,6 +59,6 @@ class UXQuillType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'ux-quill';
+        return 'ux_quill';
     }
 }
