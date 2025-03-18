@@ -2,9 +2,8 @@
   "name": "@akyoscommunication/ux-quill",
   "description": "File input rich editor text for Symfony Forms",
   "license": "MIT",
-  "version": "1.1.0",
-  "main": "dist/controller.js",
-  "types": "dist/controller.d.ts",
+  "version": "1.0.0",
+  "main": "dist/main.js",
   "config": {
     "css_source": "src/app.css"
   },
@@ -22,7 +21,8 @@
       }
     },
     "importmap": {
-      "@hotwired/stimulus": "^3.0.0"
+      "@hotwired/stimulus": "^3.0.0",
+      "@akyoscommunication/main": "path:%PACKAGE%/dist/main.js"
     }
   },
   "peerDependencies": {

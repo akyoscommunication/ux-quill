@@ -42,5 +42,11 @@
 			"/Tests/"
 		]
 	},
+	"extra": {
+		"thanks": {
+			"name": "symfony/ux",
+			"url": "https://github.com/symfony/ux"
+		}
+	},
 	"minimum-stability": "dev"
 }
