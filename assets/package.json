@@ -14,16 +14,14 @@
         "name": "ux-quill",
         "webpackMode": "eager",
         "fetch": "eager",
-        "enabled": true,
-        "autoimport": {
-          "quill": true,
-          "quill/dist/quill.snow.css": true,
-          "quill/dist/quill.bubble.css": true
-        }
+        "enabled": true
       }
     },
     "importmap": {
-      "@hotwired/stimulus": "^3.0.0"
+      "@hotwired/stimulus": "^3.0.0",
+      "quill": "^2.0.3",
+      "quill/dist/quill.snow.css": "^2.0.3",
+      "quill/dist/quill.bubble.css": "^2.0.3"
     }
   },
   "peerDependencies": {
