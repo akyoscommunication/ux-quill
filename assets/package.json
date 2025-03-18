@@ -14,10 +14,7 @@
         "name": "ux-quill",
         "webpackMode": "eager",
         "fetch": "eager",
-        "enabled": true,
-        "autoimport": {
-          "@akyoscommunication/ux-quill/dist/app.css": true
-        }
+        "enabled": true
       }
     },
     "importmap": {

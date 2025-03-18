@@ -3,6 +3,7 @@
 namespace Akyos\UXQuill\DependencyInjection;
 
 use Akyos\UXQuill\Form\UXQuillType;
+use Symfony\Component\AssetMapper\AssetMapperInterface;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Definition;
